@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning report | NV Atlas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/pages.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">NV</span><span><strong>NV Atlas</strong><small data-i18n="brandSubtitle">Translation corpus explorer</small></span></a>
+    <nav class="main-nav" aria-label="Primary"><a href="index.html" data-i18n="navExplore">Explore</a><a href="report.html" class="active" data-i18n="navReport">Learning report</a><a href="codebook.html" data-i18n="navCodebook">Codebook</a><a href="ai-use.html" data-i18n="navAiUse">AI use</a></nav>
+    <div class="header-tools"><div class="language-switch" role="group" aria-label="Language"><button type="button" data-lang="en" class="active">EN</button><button type="button" data-lang="zh">繁</button></div><button type="button" class="menu-button" aria-label="Toggle menu" aria-expanded="false">☰</button></div>
+  </header>
+  <main id="main" class="prose-page">
+    <header class="prose-header">
+      <p class="eyebrow" data-page-i18n="reportEyebrow">Project essay / 01</p>
+      <h1 data-page-i18n="reportHeading">A small corpus, a large question.</h1>
+      <p class="prose-lede" data-page-i18n="reportLede">This project began with a simple mismatch: an English noun, a Chinese verb, and a gap of context between them.</p>
+    </header>
+    <div class="prose-layout">
+      <nav class="prose-toc" aria-label="Report sections">
+        <a href="#origin" data-page-i18n="originTitle">Origin</a><a href="#background" data-page-i18n="backgroundTitle">Background</a><a href="#gap" data-page-i18n="gapTitle">Gap</a><a href="#questions" data-page-i18n="questionsTitle">Questions</a><a href="#method" data-page-i18n="methodTitle">Method</a><a href="#analysis" data-page-i18n="analysisTitle">Analysis</a><a href="#conclusion" data-page-i18n="conclusionTitle">Conclusion</a><a href="#reflection" data-page-i18n="reflectionTitle">Reflection</a>
+      </nav>
+      <article class="prose-content">
+        <section id="origin">
+          <h2 data-page-i18n="originTitle">Origin</h2>
+          <div lang="en">
+            <p>I wanted to study something that appears small enough to inspect but is difficult to settle with a simple rule: what happens when an English nominal is rendered as a Chinese verb? The supplied NV Atlas dataset gives each pair an English key nominal and a Chinese verb. That makes the gap visible in a way a generic subtitle concordance would not.</p>
+            <p>The project is therefore not a dictionary of “correct translations.” It is an exploration of <strong>consistency and variation</strong> in a 500-pair sample. The source file is the starting point; the analysis asks how its own categories travel across contexts.</p>
+          </div>
+          <div lang="zh-Hant">
+            <p>我想研究一個看似很小、卻很難用單一規則解決的問題：當英文名詞被譯成中文動詞時，發生了什麼？所提供的 NV Atlas 資料集為每一組配對標出英文關鍵名詞與中文動詞，使這種落差比一般字幕索引更清楚可見。</p>
+            <p>因此，本專題不是「正確譯法」詞典，而是對 500 組配對中<strong>一致性與變異</strong>的探索。原始檔案是起點；分析要問的是，它自身的分類如何在不同語境中移動。</p>
+          </div>
+        </section>
+        <section id="background">
+          <h2 data-page-i18n="backgroundTitle">Background</h2>
+          <div lang="en"><p>Translation-studies work on lexical choice often treats consistency as a norm shaped by genre, register, and the immediate co-text. In subtitle-like material, the relevant unit is rarely an isolated noun. A term such as <em>attention</em> can become an instruction (“注意”), a military command (“稍息”), or a statement of awareness (“知道”). The supplied key-term labels make this kind of variation countable.</p></div>
+          <div lang="zh-Hant"><p>翻譯研究中有關詞彙選擇的討論，常把一致性視為受文類、語域與上下文塑造的規範。在字幕式材料中，相關單位很少是孤立的名詞。例如 <em>attention</em> 可以是提示（「注意」）、軍事口令（「稍息」），也可以是表示知悉（「知道」）。所提供關鍵詞標籤，使這種變異可以被計數。</p></div>
+        </section>
+        <section id="gap">
+          <h2 data-page-i18n="gapTitle">Gap</h2>
+          <div lang="en"><p>Existing bilingual resources often show a preferred equivalent without showing how often alternatives appear or whether they cluster by context. A flat two-column list has the same limitation: it hides the difference between a stable rendering and a one-off adaptation. This project makes that difference the unit of analysis.</p><div class="callout"><p><strong>Important limitation.</strong> The supplied CSV does not state the source corpus version, retrieval URL, or sampling seed at sentence level. The site records the filename, row number, collection date, and SHA-256 hash, but it cannot verify provenance that is absent from the source. Those fields must be supplied or checked by the project owner before submission.</p></div></div>
+          <div lang="zh-Hant"><p>現有雙語資源常只列出首選對應詞，卻不顯示替代譯法出現的頻率，也不顯示它們是否依語境聚集。平面的兩欄清單同樣有此限制：它隱藏了穩定譯法與一次性調整之間的差異。本專題把這個差異本身當作分析單位。</p><div class="callout"><p><strong>重要限制。</strong> 所提供的 CSV 沒有在句子層級說明語料庫版本、擷取網址或抽樣種子。本網站記錄檔名、行號、收集日期與 SHA-256 雜湊值，但無法驗證原始檔中沒有的來源資訊。提交前必須由專題擁有者補上或核實這些欄位。</p></div></div>
+        </section>
+        <section id="questions">
+          <h2 data-page-i18n="questionsTitle">Questions</h2>
+          <div lang="en"><ol><li>How often does one English key nominal receive multiple Chinese verb renderings?</li><li>Which renderings dominate, and where do alternatives appear?</li><li>What can a linked, filterable view reveal that a flat CSV cannot?</li><li>Which limitations of the supplied data remain visible even after cleaning?</li></ol></div>
+          <div lang="zh-Hant"><ol><li>同一個英文關鍵名詞有多常出現多個中文動詞譯法？</li><li>哪些譯法佔主導，替代譯法又在哪裡出現？</li><li>連結式、可篩選的視圖能揭示平面 CSV 看不到的什麼？</li><li>即使清理之後，原始資料的哪些限制仍然可見？</li></ol></div>
+        </section>
+        <section id="method">
+          <h2 data-page-i18n="methodTitle">Method</h2>
+          <div lang="en">
+            <p>The build pipeline reads the supplied CSV as UTF-8, normalises whitespace, checks required fields, and retains all 500 rows for auditability. Eight exact duplicate pairs are flagged rather than silently deleted, so the explorer can match the supplied data. The source file's SHA-256 is <code>8df6e60e767bc411c180860dab290272f2210db5711a702b39f2ad88057f00a3</code>.</p>
+            <p>Categories are computed with a reproducible consistency rule: for an English key term appearing at least twice, the Chinese rendering with the largest frequency is marked <em>conventional</em>; other renderings are <em>alternative</em>; terms occurring once are <em>single instance</em>. This is a corpus description, not a quality label.</p>
+            <table class="method-table"><tr><td>Input</td><td>500 supplied rows; fields: id, English, Chinese, English_Nominal, Chinese_Verb</td></tr><tr><td>Cleaning</td><td>Whitespace normalisation, required-field check. Duplicate pairs are flagged, not removed.</td></tr><tr><td>Category rule</td><td>Modal rendering for repeated nominal = conventional; other repeated-term renderings = alternative; singleton = single instance.</td></tr><tr><td>Manual check</td><td>Not claimed. All rows are marked human_checked = no until the project owner verifies them against the original source.</td></tr><tr><td>Model evidence</td><td>Script profiles flag 37 entries as mixed or mostly traditional; 16 entries contain untranslated Latin text.</td></tr></table>
+            <p>This pipeline is intentionally conservative. It does not invent source metadata, remove inconvenient examples, or mark entries as checked by a human. Those are deliberate boundaries, not missing features.</p>
+          </div>
+          <div lang="zh-Hant">
+            <p>建置流程以 UTF-8 讀取原始 CSV、正規化空白、檢查必填欄位，並保留全部 500 列以供稽核。八組完全重複的配對會被標記，不會被默默刪除，讓探索器能對應所提供資料。原始檔案的 SHA-256 為 <code>8df6e60e767bc411c180860dab290272f2210db5711a702b39f2ad88057f00a3</code>。</p>
+            <p>分類採用可重現的一致性規則：出現至少兩次的英文關鍵詞，以頻率最高的中文譯法標為<em>慣用</em>；其他譯法標為<em>替代</em>；只出現一次的關鍵詞標為<em>單一例子</em>。這是語料描述，不是品質標籤。</p>
+            <table class="method-table"><tr><td>輸入</td><td>所提供 500 列；欄位：id、English、Chinese、English_Nominal、Chinese_Verb</td></tr><tr><td>清理</td><td>正規化空白、檢查必填欄位。重複配對會標記，不會刪除。</td></tr><tr><td>分類規則</td><td>重複名詞的最高頻譯法為慣用；其他重複詞項譯法為替代；單次詞項為單一例子。</td></tr><tr><td>人工核對</td><td>不作宣稱。專題擁有者對照原始來源核實前，全部列皆標為 human_checked = no。</td></tr><tr><td>模式證據</td><td>37 列被標為混合或偏繁體；16 列的目標文字含未翻譯拉丁字母。</td></tr></table>
+            <p>此流程刻意保守：不虛構來源資料、不刪除不利例子，也不把條目標為人工已核對。這些是明確的界線，而非缺漏功能。</p>
+          </div>
+        </section>
+        <section id="analysis">
+          <h2 data-page-i18n="analysisTitle">Analysis</h2>
+          <div lang="en">
+            <p>The <strong>Rendering network</strong> shows terms by frequency and links them to Chinese renderings. The most frequent nominal, <em>attention</em>, occurs 45 times and has four recorded renderings. The dominant rendering, 注意, accounts for 42; 稍息, 知道, and 重视 each occur once. This is the clearest case of local convention with contextual outliers.</p>
+            <p>The <strong>Pattern distribution</strong> chart applies the codebook to the current filter: 247 entries are conventional, 149 alternative, and 104 single-instance. These counts are derived directly from the visible table; changing a filter recalculates them together.</p>
+            <figure class="report-figure"><img src="assets/report-patterns.svg" alt="Bar chart showing 247 conventional, 149 alternative, and 104 single-instance entries"><figcaption>Figure 1. Pattern distribution across all 500 supplied pairs. The rule describes surface consistency, not translation quality.</figcaption></figure>
+            <figure class="report-figure"><img src="assets/report-attention.svg" alt="Bar chart showing attention rendered as 注意 42 times and three alternatives once each"><figcaption>Figure 2. The dominant rendering of attention accounts for 42 of 45 pairs; three alternatives occur once each.</figcaption></figure>
+            <p>The <strong>Term × rendering heatmap</strong> reveals concentration rather than just totals. <em>protection</em> is stable at 12/12 保护; <em>permission</em> is less settled, with 12 允许 and four other renderings. The <strong>Bilingual KWIC</strong> then returns to context: the same nominal can appear in a command, a polite formula, or a narrative sentence.</p>
+            <p>Several data-quality signals complicate the reading. 16 Chinese targets contain Latin text, and 37 entries show mixed or mostly traditional script against a predominantly simplified dataset. These are reasons to treat the categories as exploratory. The clean, reproducible rule makes disagreement visible; it does not settle whether each variant is justified.</p>
+          </div>
+          <div lang="zh-Hant">
+            <p><strong>譯法網絡圖</strong>按頻率呈現詞項，並連到中文譯法。最高頻的名詞 <em>attention</em> 出現 45 次，記錄了四種譯法。主導譯法「注意」有 42 次；「稍息」、「知道」、「重视」各一次。這是局部慣例與語境例外並存的最清楚例子。</p>
+            <p><strong>模式分佈圖</strong>把分類準則套用到目前篩選結果：247 列為慣用、149 列為替代、104 列為單一例子。這些數字直接由可見表格計算；改變篩選時會一起重算。</p>
+            <figure class="report-figure"><img src="assets/report-patterns.svg" alt="顯示 247 條慣用、149 條替代及 104 條單一例子的長條圖"><figcaption>圖一：全部 500 組配對的模式分佈。此規則描述表面一致性，不是翻譯品質。</figcaption></figure>
+            <figure class="report-figure"><img src="assets/report-attention.svg" alt="顯示 attention 譯為注意 42 次，另有三種各一次的替代譯法"><figcaption>圖二：attention 的主導譯法佔 45 組中的 42 組；三種替代譯法各出現一次。</figcaption></figure>
+            <p><strong>詞項 × 譯法熱力圖</strong>顯示的是集中程度，而不只是總數。<em>protection</em> 在 12/12 中穩定譯為「保护」；<em>permission</em> 則較不穩定，12 次「允许」之外還有四種譯法。<strong>雙語 KWIC</strong> 再把讀者帶回語境：同一個名詞可以出現在指令、禮貌公式或敘述句中。</p>
+            <p>幾項資料品質訊號令解讀更複雜：16 個中文目標含拉丁文字，37 列在偏簡體資料中呈混合或偏繁體書寫。這些都是把分類視為探索性結果的理由。清楚、可重現的規則讓差異可見，但不會判定每個變體是否合理。</p>
+          </div>
+        </section>
+        <section id="conclusion">
+          <h2 data-page-i18n="conclusionTitle">Conclusion</h2>
+          <div lang="en"><p>The site turns a flat list into an argument about stability and context. It achieves a searchable and filterable corpus, linked visualizations that update together, a bilingual interface, a codebook, and a transparent report. Its most important conclusion is also a caution: dominant renderings are real patterns, but they are not universal rules.</p></div>
+          <div lang="zh-Hant"><p>本網站把平面清單轉化為關於穩定性與語境的論證。它提供可搜尋、可篩選的語料庫、同步更新的連結式視覺化、雙語介面、分類準則，以及透明的報告。最重要的結論同時也是提醒：主導譯法確實是模式，但不是普遍規則。</p></div>
+        </section>
+        <section id="reflection">
+          <h2 data-page-i18n="reflectionTitle">Reflection</h2>
+          <div lang="en"><p>The hardest part was distinguishing what the dataset <em>shows</em> from what it <em>claims</em>. A frequency count is easy; deciding whether a rendering is a convention, an adaptation, or an extraction error requires context and human judgment. AI could build the interface, calculate counts, and expose inconsistencies. It could not verify absent provenance or certify entries as manually checked.</p><p>If I continued the project, I would first recover the exact source version, sampling method, and seed; then manually verify a random sample; then refine the codebook with inter-annotator notes. I would also standardise the Chinese script only in the interface, never silently in the corpus.</p></div>
+          <div lang="zh-Hant"><p>最困難的是區分資料<em>顯示</em>了什麼，與資料<em>宣稱</em>了什麼。頻率計算很容易；判斷一個譯法是慣例、調整，還是抽取錯誤，則需要語境與人的判斷。AI 可以建立介面、計算數字、揭露不一致；它無法核實不存在的來源資訊，也無法把條目認證為人工已核對。</p><p>若繼續此專題，我會先找回確切的來源版本、抽樣方法與種子；再隨機人工核對；然後依據標註者間筆記修訂分類準則。我也會在介面上統一繁體中文，但絕不會在語料本身默默改寫。</p></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="page-footer"><a href="index.html" data-page-i18n="backExplore">← Back to explorer</a><span>NV Atlas · 2026R1</span></footer>
+  <script src="assets/pages.js" defer></script>
+</body>
+</html>

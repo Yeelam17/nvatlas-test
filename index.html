@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An interactive corpus explorer for English–Chinese nominal-to-verb renderings in the NV Atlas supplied dataset.">
+  <title>NV Atlas | Translation Corpus Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="NV Atlas home">
+      <span class="brand-mark" aria-hidden="true">NV</span>
+      <span><strong>NV Atlas</strong><small data-i18n="brandSubtitle">Translation corpus explorer</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="index.html" data-i18n="navExplore">Explore</a>
+      <a href="report.html" data-i18n="navReport">Learning report</a>
+      <a href="codebook.html" data-i18n="navCodebook">Codebook</a>
+      <a href="ai-use.html" data-i18n="navAiUse">AI use</a>
+    </nav>
+    <div class="header-tools">
+      <div class="language-switch" role="group" aria-label="Language">
+        <button type="button" data-lang="en" class="active">EN</button>
+        <button type="button" data-lang="zh">繁</button>
+      </div>
+      <button type="button" class="menu-button" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="eyebrow">Corpus study · 2026R1</p>
+        <h1 data-i18n="heroTitle">How does a <em>nominal</em><br>become a verb?</h1>
+        <p class="lede" data-i18n="heroLede">An interactive exploration of 500 English–Chinese sentence pairs, tracing the distance between an English key nominal and the Chinese verb supplied for it.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#explorer" data-i18n="exploreButton">Explore the corpus <span aria-hidden="true">↓</span></a>
+          <a class="button ghost" href="report.html" data-i18n="readReport">Read the learning report</a>
+        </div>
+      </div>
+      <aside class="hero-note" aria-label="Research note">
+        <span class="note-index">01 / RESEARCH NOTE</span>
+        <p data-i18n="heroNote">When one English noun has several Chinese verb renderings, consistency is not a given. It is a question about context, convention, and the limits of a two-column dataset.</p>
+        <div class="stat-pair"><strong>500</strong><span data-i18n="statEntries">sentence pairs</span></div>
+        <div class="stat-pair"><strong>195</strong><span data-i18n="statTerms">English key terms</span></div>
+      </aside>
+    </section>
+
+    <section class="explorer" id="explorer">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow" data-i18n="exploreEyebrow">The corpus</p>
+          <h2 data-i18n="exploreTitle">Read between the pairs.</h2>
+        </div>
+        <p class="section-intro" data-i18n="exploreIntro">Filter the dataset, select a term, and watch every view recalculate. Search state is stored in the URL so a particular reading can be shared.</p>
+      </div>
+
+      <div class="search-panel">
+        <label class="search-box" for="search">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input id="search" type="search" autocomplete="off" placeholder="Search English, Chinese, or key term…" data-i18n-placeholder="searchPlaceholder">
+          <kbd>/</kbd>
+        </label>
+        <div class="filter-row">
+          <label class="select-label" for="categoryFilter"><span data-i18n="categoryLabel">Rendering pattern</span>
+            <select id="categoryFilter">
+              <option value="all" data-i18n="allCategories">All patterns</option>
+              <option value="conventional_rendering" data-i18n="conventionalRendering">Conventional rendering</option>
+              <option value="alternative_rendering" data-i18n="alternativeRendering">Alternative rendering</option>
+              <option value="single_instance" data-i18n="singleInstance">Single instance</option>
+            </select>
+          </label>
+          <label class="select-label" for="checkedFilter"><span data-i18n="checkedLabel">Human checked</span>
+            <select id="checkedFilter">
+              <option value="all" data-i18n="allChecks">All records</option>
+              <option value="yes" data-i18n="checkedYes">Yes</option>
+              <option value="no" data-i18n="checkedNo">No</option>
+            </select>
+          </label>
+          <button type="button" class="clear-button" id="clearFilters" data-i18n="clearFilters">Clear filters</button>
+        </div>
+        <div class="result-meta"><span id="resultCount" aria-live="polite">500 entries</span><span class="meta-divider">/</span><span data-i18n="urlHint">Shareable URL state</span></div>
+      </div>
+
+      <div class="viz-grid">
+        <article class="viz-card viz-wide" id="networkCard">
+          <div class="viz-header">
+            <div><span class="viz-number">01</span><h3 data-i18n="networkTitle">Rendering network</h3><p class="viz-caption" data-i18n="networkCaption">Which key terms have competing Chinese renderings, and how often does each alternative occur?</p></div>
+            <span class="viz-type" data-i18n="networkType">RELATIONAL</span>
+          </div>
+          <div class="viz-controls">
+            <label for="topTerms"><span data-i18n="topTermsLabel">Top terms</span> <output id="topTermsValue">12</output></label>
+            <input id="topTerms" type="range" min="5" max="30" value="12" step="1">
+            <label for="minLinks"><span data-i18n="minLinksLabel">Min. pair frequency</span> <output id="minLinksValue">1</output></label>
+            <input id="minLinks" type="range" min="1" max="8" value="1" step="1">
+            <button type="button" id="resetNetwork" class="text-button" data-i18n="resetView">Reset view</button>
+          </div>
+          <div class="network-wrap">
+            <svg id="network" role="img" aria-label="Interactive network of English key terms and Chinese renderings"></svg>
+            <div class="network-legend"><span class="legend-source" data-i18n="englishTerm">English key term</span><span class="legend-target" data-i18n="chineseRendering">Chinese rendering</span></div>
+          </div>
+        </article>
+
+        <article class="viz-card" id="barCard">
+          <div class="viz-header">
+            <div><span class="viz-number">02</span><h3 data-i18n="barTitle">Pattern distribution</h3><p class="viz-caption" data-i18n="barCaption">How are filtered entries distributed across the three consistency patterns?</p></div>
+            <span class="viz-type" data-i18n="barType">DISTRIBUTIONAL</span>
+          </div>
+          <div id="barChart" class="bar-chart" role="img" aria-label="Bar chart of rendering patterns"></div>
+        </article>
+
+        <article class="viz-card" id="heatCard">
+          <div class="viz-header">
+            <div><span class="viz-number">03</span><h3 data-i18n="heatTitle">Term × rendering heatmap</h3><p class="viz-caption" data-i18n="heatCaption">Where do the most frequent key terms concentrate into one rendering or spread across several?</p></div>
+            <span class="viz-type" data-i18n="heatType">DISTRIBUTIONAL</span>
+          </div>
+          <div id="heatmap" class="heatmap" role="img" aria-label="Heatmap of key terms and Chinese renderings"></div>
+        </article>
+
+        <article class="viz-card viz-wide" id="kwicCard">
+          <div class="viz-header">
+            <div><span class="viz-number">04</span><h3 data-i18n="kwicTitle">Bilingual KWIC</h3><p class="viz-caption" data-i18n="kwicCaption">What does the Chinese rendering look like in the immediate context of each English sentence?</p></div>
+            <span class="viz-type" data-i18n="kwicType">LEXICAL</span>
+          </div>
+          <div class="kwic-toolbar">
+            <span id="selectedTermLabel" data-i18n="noTermSelected">Select a term in the network or heatmap to focus.</span>
+            <button type="button" id="clearTerm" class="text-button hidden" data-i18n="clearTerm">Clear selected term</button>
+          </div>
+          <div id="kwic" class="kwic-list"></div>
+        </article>
+      </div>
+
+      <article class="table-card" id="dataGridCard">
+        <div class="viz-header">
+          <div><span class="viz-number">05</span><h3 data-i18n="tableTitle">Corpus data grid</h3><p class="viz-caption" data-i18n="tableCaption">Which entries support the current reading? Sort the table and export exactly what you see.</p></div>
+          <button type="button" class="button small" id="exportCsv" data-i18n="exportCsv">Export filtered CSV <span aria-hidden="true">↓</span></button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr>
+              <th><button type="button" data-sort="id" data-i18n="colId">ID</button></th>
+              <th><button type="button" data-sort="source_text" data-i18n="colEnglish">English source</button></th>
+              <th><button type="button" data-sort="target_text" data-i18n="colChinese">Chinese target</button></th>
+              <th><button type="button" data-sort="key_term" data-i18n="colKeyTerm">Key term</button></th>
+              <th><button type="button" data-sort="category" data-i18n="colCategory">Pattern</button></th>
+              <th data-i18n="colChecked">Checked</th>
+            </tr></thead>
+            <tbody id="tableBody"></tbody>
+          </table>
+        </div>
+        <div class="pagination">
+          <span id="pageInfo"></span>
+          <div><button type="button" id="prevPage" class="text-button" data-i18n="previous">Previous</button><button type="button" id="nextPage" class="text-button" data-i18n="next">Next</button></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="takeaway">
+      <div><p class="eyebrow" data-i18n="takeawayEyebrow">A provisional finding</p><h2 data-i18n="takeawayTitle">Consistency is local, not absolute.</h2></div>
+      <p data-i18n="takeawayBody">The most frequent key term, <strong>attention</strong>, occurs <strong>45</strong> times and has four Chinese renderings. Even terms with a dominant rendering have alternatives; the corpus invites a closer look at context rather than a simple “correct/incorrect” judgment.</p>
+      <a class="arrow-link" href="report.html" data-i18n="readAnalysis">Read the analysis <span aria-hidden="true">→</span></a>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div><strong>NV Atlas</strong><p data-i18n="footerNote">A static corpus explorer built with HTML, CSS, JavaScript, and a JSON data layer.</p></div>
+    <nav aria-label="Footer"><a href="index.html" data-i18n="navExplore">Explore</a><a href="report.html" data-i18n="navReport">Learning report</a><a href="codebook.html" data-i18n="navCodebook">Codebook</a><a href="ai-use.html" data-i18n="navAiUse">AI use</a></nav>
+  </footer>
+  <script src="assets/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI use declaration | NV Atlas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css"><link rel="stylesheet" href="assets/pages.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">NV</span><span><strong>NV Atlas</strong><small data-i18n="brandSubtitle">Translation corpus explorer</small></span></a>
+    <nav class="main-nav" aria-label="Primary"><a href="index.html" data-i18n="navExplore">Explore</a><a href="report.html" data-i18n="navReport">Learning report</a><a href="codebook.html" data-i18n="navCodebook">Codebook</a><a href="ai-use.html" class="active" data-i18n="navAiUse">AI use</a></nav>
+    <div class="header-tools"><div class="language-switch" role="group" aria-label="Language"><button type="button" data-lang="en" class="active">EN</button><button type="button" data-lang="zh">繁</button></div><button type="button" class="menu-button" aria-label="Toggle menu" aria-expanded="false">☰</button></div>
+  </header>
+  <main id="main" class="prose-page">
+    <header class="prose-header">
+      <p class="eyebrow" lang="en">Process note / 03</p><p class="eyebrow" lang="zh-Hant">過程說明 / 03</p>
+      <h1 lang="en">What the agent did, and what it could not establish.</h1><h1 lang="zh-Hant">AI 做了什麼，以及它無法證實什麼。</h1>
+      <p class="prose-lede" lang="en">This declaration records the division of labour honestly. It does not replace the project owner's verification of sources and data.</p><p class="prose-lede" lang="zh-Hant">本聲明如實記錄分工。它不能取代專題擁有者對來源與資料的核實。</p>
+    </header>
+    <div class="prose-layout">
+      <nav class="prose-toc" aria-label="AI use sections"><a href="#tools">Tools</a><a href="#tasks">Tasks</a><a href="#human">Human work</a><a href="#prompts">Prompts</a><a href="#error">An AI error</a><a href="#limits">Limits</a></nav>
+      <article class="prose-content">
+        <div class="ai-grid" id="tools">
+          <div class="ai-card"><h3>AI tool</h3><p>OpenAI Codex desktop coding agent, operating on the local repository through the Codex app.</p></div>
+          <div class="ai-card"><h3>Model</h3><p>The specific underlying model/version was not exposed in the working environment. This is stated rather than guessed.</p></div>
+          <div class="ai-card"><h3>What it produced</h3><p>The static site architecture, HTML/CSS/JavaScript, data-cleaning script, derived JSON, report drafts, and codebook drafts.</p></div>
+          <div class="ai-card"><h3>What it did not do</h3><p>It did not verify the original source, manually check 50 entries, or claim that human_checked values were positive.</p></div>
+        </div>
+        <section id="tasks">
+          <h2 lang="en">What the AI was asked to do</h2><h2 lang="zh-Hant">AI 被要求做什麼</h2>
+          <div lang="en"><ul><li>Read the project brief and implement its requirements.</li><li>Inspect and clean the supplied 500-row CSV into a web-ready JSON dataset.</li><li>Build search, filters, linked visualizations, a data grid, and CSV export.</li><li>Draft the learning report, codebook, and this declaration in English and Traditional Chinese.</li><li>Check the site locally and prepare it for GitHub Pages.</li></ul></div>
+          <div lang="zh-Hant"><ul><li>閱讀專題簡章並實作要求。</li><li>檢查並清理所提供 500 列 CSV，轉為網站可用的 JSON。</li><li>建立搜尋、篩選、連結式視覺化、資料表格與 CSV 匯出。</li><li>以英文及繁體中文起草學習報告、分類準則與本聲明。</li><li>在本機檢查網站，並準備發佈至 GitHub Pages。</li></ul></div>
+        </section>
+        <section id="human">
+          <h2 lang="en">What the project owner must do themselves</h2><h2 lang="zh-Hant">專題擁有者必須自行完成的事</h2>
+          <div class="callout" lang="en"><p><strong>Required before submission:</strong> identify the source corpus/version and sampling method; verify a random sample of at least 50 entries against the original; correct errors; update <code>human_checked</code> for those entries; review and rewrite the codebook definitions in your own words; and confirm copyright and privacy suitability.</p></div>
+          <div class="callout" lang="zh-Hant"><p><strong>提交前必須完成：</strong>確認來源語料庫版本與抽樣方法；對照原始來源隨機核對至少 50 條；修正錯誤；更新那些條目的 <code>human_checked</code>；以自己的文字審閱並改寫分類準則定義；確認版權與私隱適合公開展示。</p></div>
+        </section>
+        <section id="prompts">
+          <h2 lang="en">Example prompts</h2><h2 lang="zh-Hant">提示詞例子</h2>
+          <div lang="en"><div class="prompt">Read the attached project brief and implement it for me. Do not fabricate source metadata or mark records as human-checked. Preserve the raw CSV and make the cleaning method reproducible.</div><p style="margin-top:15px">This prompt framed the non-negotiable boundaries: the agent should build rather than invent, and it should expose missing evidence.</p></div>
+          <div lang="zh-Hant"><div class="prompt">請閱讀附件簡章並替我實作。不要虛構來源資訊，也不要把紀錄標為人工已核對。保留原始 CSV，並使清理方法可重現。</div><p style="margin-top:15px">這個提示詞界定了不可妥協的界線：AI 應建置而非虛構，並揭露缺失的證據。</p></div>
+        </section>
+        <section id="error">
+          <h2 lang="en">One thing AI got wrong</h2><h2 lang="zh-Hant">AI 曾做錯的一件事</h2>
+          <div lang="en"><p>The first category implementation used a hand-written semantic list to decide which renderings were “literal.” That was not reproducible from the data and would have made the codebook depend on the agent's opaque judgment. I noticed it when checking the resulting category counts against the raw term pairs. The rule was replaced with a frequency-based consistency classification, and the change is recorded in the codebook log.</p></div>
+          <div lang="zh-Hant"><p>第一版分類使用手寫語義清單來判定哪些譯法屬於「直譯」。這種做法無法從資料重現，會使分類準則依賴 AI 不透明的判斷。我在核對分類計數與原始詞項配對時發現了問題。規則後來改為基於頻率的一致性分類，變更已記錄在分類準則的修訂紀錄中。</p></div>
+        </section>
+        <section id="limits">
+          <h2 lang="en">Limits of the AI contribution</h2><h2 lang="zh-Hant">AI 貢獻的界限</h2>
+          <div lang="en"><p>AI is useful for making structures, generating interface code, and surfacing inconsistencies. It is not evidence of source authenticity, translation quality, or human verification. The assistant did not browse the original corpus and cannot tell whether the supplied sentence IDs correspond to the dataset named in the brief. Those gaps remain the most important part of the project's reflection.</p></div>
+          <div lang="zh-Hant"><p>AI 有助於建立結構、生成介面程式碼與揭露不一致；但它不是來源真實性、翻譯品質或人工核實的證據。助理沒有瀏覽原始語料庫，也無法判斷所提供句子 ID 是否對應簡章所指的資料集。這些缺口仍是本專題反思中最重要的部分。</p></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="page-footer"><a href="index.html">← <span lang="en">Back to explorer</span><span lang="zh-Hant">返回探索器</span></a><span>NV Atlas · 2026R1</span></footer>
+  <script src="assets/pages.js" defer></script>
+</body>
+</html>

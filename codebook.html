@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Codebook | NV Atlas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css"><link rel="stylesheet" href="assets/pages.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">NV</span><span><strong>NV Atlas</strong><small data-i18n="brandSubtitle">Translation corpus explorer</small></span></a>
+    <nav class="main-nav" aria-label="Primary"><a href="index.html" data-i18n="navExplore">Explore</a><a href="report.html" data-i18n="navReport">Learning report</a><a href="codebook.html" class="active" data-i18n="navCodebook">Codebook</a><a href="ai-use.html" data-i18n="navAiUse">AI use</a></nav>
+    <div class="header-tools"><div class="language-switch" role="group" aria-label="Language"><button type="button" data-lang="en" class="active">EN</button><button type="button" data-lang="zh">繁</button></div><button type="button" class="menu-button" aria-label="Toggle menu" aria-expanded="false">☰</button></div>
+  </header>
+  <main id="main" class="prose-page">
+    <header class="prose-header">
+      <p class="eyebrow" lang="en">Decision rules / 02</p><p class="eyebrow" lang="zh-Hant">判斷規則 / 02</p>
+      <h1 lang="en">What counts as a pattern?</h1><h1 lang="zh-Hant">什麼才算一種模式？</h1>
+      <p class="prose-lede" lang="en">The three categories below describe consistency within the supplied corpus. They are descriptive categories, not judgments of translation quality.</p>
+      <p class="prose-lede" lang="zh-Hant">以下三類描述的是所提供語料庫內部的使用一致性。它們是描述性分類，不是對翻譯質素的評價。</p>
+    </header>
+    <div class="prose-layout">
+      <nav class="prose-toc" aria-label="Codebook sections"><a href="#conventional">01 · Conventional</a><a href="#alternative">02 · Alternative</a><a href="#single">03 · Single instance</a><a href="#boundary">Boundary cases</a><a href="#log">Change log</a></nav>
+      <article class="prose-content">
+        <div class="callout" lang="en"><p><strong>Status:</strong> exploratory computational codebook. The project owner should review it before treating it as a final human annotation scheme. All entries currently have <code>human_checked = no</code>.</p></div>
+        <div class="callout" lang="zh-Hant"><p><strong>狀態：</strong>探索性計算分類準則。專題擁有者在把它當成最終人工標註方案前，應先審閱。目前所有條目皆為 <code>human_checked = no</code>。</p></div>
+
+        <section class="codebook-entry" id="conventional">
+          <h2 lang="en">01 · Conventional rendering</h2><h2 lang="zh-Hant">01 · 慣用譯法</h2>
+          <p class="codebook-meta">247 / 500 entries</p>
+          <div lang="en">
+            <p><strong>Definition.</strong> An English key term occurs at least twice, and the Chinese verb in the pair is the most frequent rendering of that term in the filtered corpus. The category identifies local prevalence, not correctness.</p>
+            <p><strong>Theory source.</strong> Toury's concept of translational norms, especially the idea that norms are probabilistic and community-shaped rather than absolute rules.</p>
+            <p><strong>Decision rule.</strong> Group all entries by <code>English_Nominal</code> (case-normalised). If the nominal has at least two entries, mark every entry with the highest-frequency Chinese rendering as conventional. Ties resolve to the lexicographically first rendering.</p>
+            <div class="example-grid"><div class="example-box"><strong>Positive example</strong>protection → 保护 appears 12 times across 12 protection entries.</div><div class="example-box"><strong>Negative example</strong>permission → 批准 occurs twice, but 允许 occurs 12 times; 批准 is not conventional.</div></div>
+            <p><strong>Boundary case.</strong> attention → 注意 occurs 42/45 and is conventional, while the three one-off alternatives are not. The majority does not make 注意 the correct translation of every utterance; it identifies the corpus tendency.</p>
+          </div>
+          <div lang="zh-Hant">
+            <p><strong>定義。</strong>英文關鍵詞出現至少兩次，且該配對中的中文動詞是該詞項在目前篩選語料中的最高頻譯法。此類別指出局部普遍性，不指正確性。</p>
+            <p><strong>理論來源。</strong>Toury 的翻譯規範概念，特別是規範具機率性、由社群塑造，而非絕對規則的主張。</p>
+            <p><strong>判斷規則。</strong>按 <code>English_Nominal</code>（不分大小寫）分組。若該名詞至少兩條，把使用最高頻中文譯法的所有條目標為慣用。頻率相同時，取字典序最前的譯法。</p>
+            <div class="example-grid"><div class="example-box"><strong>正面例子</strong>protection → 保护 在 12 條 protection 條目中出現 12 次。</div><div class="example-box"><strong>反面例子</strong>permission → 批准 出現兩次，但 允许 出現 12 次，因此 批准 不屬慣用。</div></div>
+            <p><strong>邊界情況。</strong>attention → 注意 出現 42/45，屬慣用；三個一次性替代譯法則不算。多數並不表示 注意 是每句話的正確譯法，只表示語料中的傾向。</p>
+          </div>
+        </section>
+
+        <section class="codebook-entry" id="alternative">
+          <h2 lang="en">02 · Alternative rendering</h2><h2 lang="zh-Hant">02 · 替代譯法</h2>
+          <p class="codebook-meta">149 / 500 entries</p>
+          <div lang="en">
+            <p><strong>Definition.</strong> The English key term occurs at least twice, but the Chinese verb in the pair is not its modal rendering. This category captures variation within a repeated lexical item.</p>
+            <p><strong>Theory source.</strong> Baker's discussion of equivalence and the importance of examining translation choices at the level of the individual text rather than assuming one-to-one word equivalence.</p>
+            <p><strong>Decision rule.</strong> Apply after grouping by nominal. Any pair whose rendering is not the highest-frequency rendering is alternative, regardless of whether it is semantically defensible.</p>
+            <div class="example-grid"><div class="example-box"><strong>Positive example</strong>attention → 稍息 appears once beside 42 occurrences of 注意.</div><div class="example-box"><strong>Negative example</strong>protection → 保护 appears 12/12; there is no alternative rendering in this data.</div></div>
+            <p><strong>Boundary case.</strong>permission → 允许 (12) and 批准 (2) are both plausible in context. The label records only that 批准 is not the majority form; it does not say the translation is wrong.</p>
+          </div>
+          <div lang="zh-Hant">
+            <p><strong>定義。</strong>英文關鍵詞出現至少兩次，但該配對中的中文動詞不是其最高頻譯法。此類別捕捉重複詞項內部的變異。</p>
+            <p><strong>理論來源。</strong>Baker 關於對等與翻譯選擇的討論：應在個別文本層面考察選擇，而非假定一對一的詞語對等。</p>
+            <p><strong>判斷規則。</strong>按名詞分組後，凡不是最高頻譯法的配對皆標為替代，不論其語義是否合理。</p>
+            <div class="example-grid"><div class="example-box"><strong>正面例子</strong>attention → 稍息 出現一次，對比 注意 的 42 次。</div><div class="example-box"><strong>反面例子</strong>protection → 保护 為 12/12，此資料中沒有替代譯法。</div></div>
+            <p><strong>邊界情況。</strong>permission → 允许（12 次）與 批准（2 次）在語境中都可能合理。標籤只記錄 批准 不是多數形式，並不表示翻譯錯誤。</p>
+          </div>
+        </section>
+
+        <section class="codebook-entry" id="single">
+          <h2 lang="en">03 · Single instance</h2><h2 lang="zh-Hant">03 · 單一例子</h2>
+          <p class="codebook-meta">104 / 500 entries</p>
+          <div lang="en">
+            <p><strong>Definition.</strong> The English key term occurs only once in the supplied corpus, so no within-corpus comparison of renderings is possible.</p>
+            <p><strong>Theory source.</strong> Corpus-linguistic caution about frequency thresholds: a single occurrence cannot establish a norm or a distribution.</p>
+            <p><strong>Decision rule.</strong> If the normalised English key term has a corpus frequency of exactly one, mark the entry as single instance.</p>
+            <div class="example-grid"><div class="example-box"><strong>Positive example</strong>A term appearing once is labelled single instance even if its rendering looks natural.</div><div class="example-box"><strong>Negative example</strong>dance occurs 10 times and is therefore never single instance, even when one rendering appears only once.</div></div>
+            <p><strong>Boundary case.</strong>A rare term with two entries is not single instance. It can supply an alternative rendering, but two examples are still too few for a strong claim about convention.</p>
+          </div>
+          <div lang="zh-Hant">
+            <p><strong>定義。</strong>英文關鍵詞在所提供的語料中只出現一次，無法在語料內部比較譯法。</p>
+            <p><strong>理論來源。</strong>語料庫語言學對頻率門檻的謹慎態度：單次出現不能建立規範或分佈。</p>
+            <p><strong>判斷規則。</strong>若正規化後的英文關鍵詞在語料中頻率恰為一次，該條目標為單一例子。</p>
+            <div class="example-grid"><div class="example-box"><strong>正面例子</strong>只出現一次的詞項標為單一例子，即使其譯法看起來自然。</div><div class="example-box"><strong>反面例子</strong>dance 出現十次，因此永不會是單一例子，即使其中一種譯法只出現一次。</div></div>
+            <p><strong>邊界情況。</strong>有兩條紀錄的罕見詞項不是單一例子。它可提供替代譯法，但兩個例子仍不足以對慣例作強烈主張。</p>
+          </div>
+        </section>
+
+        <section class="codebook-entry" id="boundary">
+          <h2 lang="en">Boundary decisions and limitations</h2><h2 lang="zh-Hant">邊界判斷與限制</h2>
+          <div lang="en"><p>The rule classifies <strong>surface consistency</strong>, not translation strategy. A rendering can be an excellent contextual adaptation and still be labelled “alternative” because another form dominates. Conversely, a conventional rendering can be contextually wrong. The codebook therefore works best as a way to locate cases for close reading.</p><p>The data also mixes Chinese scripts and contains Latin text in some Chinese targets. These are flagged in the JSON and should be checked before any claim about dialect, region, or translator style.</p></div>
+          <div lang="zh-Hant"><p>此規則分類的是<strong>表面一致性</strong>，不是翻譯策略。一個譯法可以是極佳的語境調整，卻因另一形式佔多數而被標為「替代」；反過來，慣用譯法也可能在特定語境中不合適。因此，分類準則最適合用來定位需要細讀的案例。</p><p>資料也混合了中文字形，部分中文目標含拉丁文字。這些都已標記在 JSON 中；在對地區、方言或譯者風格作任何主張前，應先核查。</p></div>
+        </section>
+
+        <section id="log">
+          <h2 lang="en">Change log</h2><h2 lang="zh-Hant">修訂紀錄</h2>
+          <div lang="en"><ul><li><strong>2026-11-05:</strong> Replaced an initial hand-written semantic heuristic with the current frequency-based consistency rule, because the earlier version depended on an opaque list and could not be audited from the data alone.</li><li><strong>2026-11-05:</strong> Retained duplicate pairs as flagged records rather than deleting them, so the explorer's count matches the supplied 500-row file.</li><li><strong>2026-11-05:</strong> Added script and untranslated-Latin flags after reviewing the target column.</li></ul></div>
+          <div lang="zh-Hant"><ul><li><strong>2026-11-05：</strong>以目前的頻率一致性規則取代初期手寫語義啟發式，因為舊版依賴不透明清單，無法只憑資料稽核。</li><li><strong>2026-11-05：</strong>保留重複配對並加以標記，而非刪除，讓探索器計數與所提供 500 列檔案一致。</li><li><strong>2026-11-05：</strong>檢視目標欄後，新增字形與未翻譯拉丁文字標記。</li></ul></div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="page-footer"><a href="index.html">← <span lang="en">Back to explorer</span><span lang="zh-Hant">返回探索器</span></a><span>NV Atlas · 2026R1</span></footer>
+  <script src="assets/pages.js" defer></script>
+</body>
+</html>

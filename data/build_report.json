@@ -1,0 +1,29 @@
+{
+  "raw_rows": 500,
+  "kept_rows": 500,
+  "rejected": {
+    "duplicate_pair": 8
+  },
+  "category_counts": {
+    "alternative_rendering": 149,
+    "conventional_rendering": 247,
+    "single_instance": 104
+  },
+  "human_checked_counts": {
+    "no": 500
+  },
+  "duplicate_pairs_retained": 8,
+  "quality_flag_counts": {
+    "long_source": 6,
+    "duplicate_pair": 8,
+    "script_inconsistency": 37,
+    "untranslated_latin": 16
+  },
+  "script_profiles": {
+    "mostly_simplified": 288,
+    "no_marker": 175,
+    "mixed_script": 24,
+    "mostly_traditional": 13
+  },
+  "source_sha256": "8df6e60e767bc411c180860dab290272f2210db5711a702b39f2ad88057f00a3"
+}
